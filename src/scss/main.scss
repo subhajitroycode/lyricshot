@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Tai+Heritage+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+$heritage-font: "Tai Heritage Pro", serif;
+$playfair-font: "Playfair Display", serif;
+$poppins-font: "Poppins", sans-serif;
+$white: #ebebeb;
+$lyrics-bg: #91908c;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: url("../../assets/lyrics-bg.png") center center;
+
+  .heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    font-family: $playfair-font;
+    font-style: italic;
+  }
+
+  form {
+    // background-color: red;
+    text-align: center;
+    width: 80%;
+    font-family: $heritage-font;
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    i {
+      position: absolute;
+      padding: 9px;
+      min-width: 15px;
+      // background-color: #ee4758;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      padding: 5px 2px 5px 36px;
+      font-size: 1.2rem;
+      border-radius: 3px;
+      margin-right: 15px;
+      background-color: #e9dcd6;
+
+      &:focus {
+        border: 1px solid black;
+      }
+    }
+
+    button {
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      background-color: #58e9b6;
+
+      &:hover {
+        background-color: #6dd0fe;
+      }
+    }
+  }
+
+  .search-results {
+    margin-top: 20px;
+    width: 400px;
+    height: 550px;
+    // background-color: #6dd0fe;
+    // display: none;
+
+    &.hidden {
+      display: none;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: $playfair-font;
+      font-size: 1.4rem;
+    }
+
+    .loader-wrapper {
+      // display: flex;
+      justify-content: center;
+      align-items: center;
+      // position: absolute;
+      // top: 32%;
+      // left: 0;
+      // translate: translateX(-50%);
+      width: 100%;
+      height: 84%;
+      background-color: #e9dcd6;
+
+      .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background-color: red;
+
+        div {
+          box-sizing: border-box;
+          display: block;
+          position: absolute;
+          width: 32px;
+          height: 32px;
+          margin: 8px;
+          border: 3px solid #000;
+          border-radius: 50%;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          border-color: #000 transparent transparent transparent;
+
+          &:nth-child(1) {
+            animation-delay: -0.45s;
+          }
+
+          &:nth-child(2) {
+            animation-delay: -0.3s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: -0.15s;
+          }
+        }
+      }
+    }
+
+    ul {
+      width: 100%;
+      height: 84%;
+      overflow: auto;
+      box-sizing: content-box;
+      padding-top: 10px;
+      background-color: #e9dcd6;
+      // background-color: red;
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 80%;
+        margin: 0px auto 20px;
+        padding: 10px;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: lighten(#000, 70);
+          // color: $white;
+        }
+
+        .infos {
+          margin-left: 20px;
+          width: 200px;
+
+          p {
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .lyrics-container {
+    background-color: $lyrics-bg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    margin-top: 20px;
+    width: 400px;
+    height: 90%;
+
+    &.hidden {
+      display: none;
+    }
+
+    .show-lyrics {
+      width: 300px;
+      height: 350px;
+      box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+      border-radius: 6px;
+      font-family: $poppins-font;
+
+      .song-details {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+
+        .info-details {
+          margin-left: 20px;
+
+          h6 {
+            overflow: hidden;
+            max-width: 20ch;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 500;
+          }
+
+          p {
+            color: transparentize($white, $amount: 0.4);
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+
+      .lines {
+        width: 80%;
+        height: 47%;
+        overflow-y: scroll;
+        // background-color: #fff;
+        box-sizing: content-box;
+        padding: 0px 20px;
+        font-size: 20px;
+
+        font-weight: 500;
+        line-height: 1.6;
+
+        // Hiding scrollbar but keeping the functionality
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+
+        &::-webkit-scrollbar {
+          display: none; /* Safari, Chrome and opera */
+        }
+      }
+
+      .logo {
+        // background-color: #000;
+        display: flex;
+        align-items: center;
+        padding: 30px 20px 0px;
+
+        &.hidden {
+          display: none;
+        }
+
+        i {
+          font-size: 18px;
+        }
+
+        p {
+          margin-left: 3px;
+          font-size: 12px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    height: 124vh;
+
+    .heading {
+      margin: 15px 20px;
+      text-align: center;
+      font-size: 2.4rem;
+    }
+    form {
+      button {
+        margin-top: 15px;
+      }
+    }
+    .search-results {
+      width: 80%;
+      height: 55%;
+    }
+    .lyrics-container {
+      width: 95%;
+      height: 75%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    .lyrics-container {
+      height: 70%;
+    }
+  }
+}

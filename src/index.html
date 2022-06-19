@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lyrics Capture</title>
+
+    <link rel="stylesheet" href="./scss/main.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="./js/script.js" type="module"></script>
+  </head>
+  <body>
+    <section class="container">
+      <h1 class="heading">Lyrics Capture App</h1>
+      <form action="">
+        <label for="song">Enter artist or song name below 👇</label>
+        <i class="fa-solid fa-magnifying-glass icon"></i>
+        <input
+          type="search"
+          name="song"
+          id="song"
+          placeholder="Search here..."
+          required
+        />
+        <button id="search">Search</button>
+      </form>
+
+      <div class="search-results hidden">
+        <h2>Top Results</h2>
+        <div class="loader-wrapper" id="loading">
+          <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <ul></ul>
+      </div>
+
+      <div class="lyrics-container hidden">
+        <div class="show-lyrics">
+          <div class="song-details"></div>
+          <div class="lines"></div>
+
+          <div class="logo hidden">
+            <i class="fa-brands fa-spotify"></i>
+            <p>Spotify.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
