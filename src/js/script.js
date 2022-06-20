@@ -129,7 +129,3 @@ const showLyrics = (value) => {
     })
     .catch((err) => alert(err.message));
 };
-
-function triggerLoad() {
-  alert("Loaded");
-}
