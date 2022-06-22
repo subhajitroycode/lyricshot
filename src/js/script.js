@@ -9,10 +9,12 @@ const options = {
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const ul = document.querySelector("ul");
-const displayLyrics = document.querySelector(".show-lyrics");
-const lines = displayLyrics.querySelector(".lines");
+const lyricsContainer = document.querySelector(".lyrics-container");
+const displayLyrics = lyricsContainer.querySelector(".show-lyrics");
 const songDetails = displayLyrics.querySelector(".song-details");
+const lines = displayLyrics.querySelector(".lines");
 const loading = document.getElementById("loading");
+const bgContainer = document.querySelector(".bg-container");
 
 const searchSongs = async (queryValue) => {
   let response = await fetch(
@@ -40,7 +42,7 @@ const getLyrics = async (id) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  document.querySelector(".lyrics-container").classList.add("hidden");
+  document.querySelector(".second-container").classList.add("hidden");
   document.querySelector(".search-results").classList.remove("hidden");
   ul.innerHTML = "";
   ul.style.display = "none";
@@ -81,7 +83,7 @@ const showResults = (data) => {
 
     li.addEventListener("click", (e) => {
       document.querySelector(".search-results").classList.add("hidden");
-      document.querySelector(".lyrics-container").classList.remove("hidden");
+      document.querySelector(".second-container").classList.remove("hidden");
       document.querySelector(".logo").classList.add("hidden");
 
       showLyrics(e.target.closest("li"));
@@ -129,3 +131,41 @@ const showLyrics = (value) => {
     })
     .catch((err) => alert(err.message));
 };
+
+const bgColors = bgContainer.querySelectorAll(".bg-color");
+
+bgColors.forEach((bg) => {
+  bg.addEventListener("click", (e) => {
+    displayLyrics.style.backgroundColor = "transparent";
+    switch (e.target.dataset.color) {
+      case "black":
+        lyricsContainer.style.backgroundColor = "#292929";
+        displayLyrics.style.backgroundColor = "#111111";
+        break;
+
+      case "red":
+        lyricsContainer.style.backgroundColor = "#ce0025";
+        break;
+
+      case "purple":
+        lyricsContainer.style.backgroundColor = "#2a283d";
+        break;
+
+      case "brown":
+        lyricsContainer.style.backgroundColor = "#8b6952";
+        break;
+
+      case "smalt-blue":
+        lyricsContainer.style.backgroundColor = "#56808f";
+        break;
+
+      case "coral-tree":
+        lyricsContainer.style.backgroundColor = "#aa6a7b";
+        break;
+
+      case "brown-grey":
+        lyricsContainer.style.backgroundColor = "#988a5f";
+        break;
+    }
+  });
+});

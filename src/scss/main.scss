@@ -86,8 +86,6 @@ $lyrics-bg: #91908c;
     margin-top: 20px;
     width: 400px;
     height: 550px;
-    // background-color: #6dd0fe;
-    // display: none;
 
     &.hidden {
       display: none;
@@ -104,10 +102,6 @@ $lyrics-bg: #91908c;
       // display: flex;
       justify-content: center;
       align-items: center;
-      // position: absolute;
-      // top: 32%;
-      // left: 0;
-      // translate: translateX(-50%);
       width: 100%;
       height: 84%;
       background-color: #e9dcd6;
@@ -185,92 +179,146 @@ $lyrics-bg: #91908c;
     }
   }
 
-  .lyrics-container {
-    background-color: $lyrics-bg;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: $white;
-    margin-top: 20px;
+  .second-container {
     width: 400px;
-    height: 90%;
+    height: 75%;
 
     &.hidden {
       display: none;
     }
 
-    .show-lyrics {
-      width: 300px;
-      height: 350px;
-      box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
-      border-radius: 6px;
-      font-family: $poppins-font;
+    .bg-container {
+      width: 30px;
+      height: 0;
+      background-color: #58e9b6;
+      position: relative;
+      top: 27%;
+      left: 110%;
 
-      .song-details {
-        display: flex;
-        align-items: center;
-        padding: 20px;
+      .bg-color {
+        width: 30px;
+        height: 30px;
+        margin: 10px auto;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 3px solid #c1c8c6;
 
-        .info-details {
-          margin-left: 20px;
+        &:hover {
+          transform: scale(1.15);
+        }
 
-          h6 {
-            overflow: hidden;
-            max-width: 20ch;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-size: 14px;
-            font-weight: 500;
+        &[data-color="black"] {
+          background-color: #292929;
+        }
+
+        &[data-color="red"] {
+          background-color: #ce0025;
+        }
+
+        &[data-color="purple"] {
+          background-color: #2a283d;
+        }
+
+        &[data-color="brown"] {
+          background-color: #8b6952;
+        }
+
+        &[data-color="smalt-blue"] {
+          background-color: #56808f;
+        }
+
+        &[data-color="coral-tree"] {
+          background-color: #aa6a7b;
+        }
+
+        &[data-color="brown-grey"] {
+          background-color: #988a5f;
+        }
+      }
+    }
+
+    .lyrics-container {
+      background-color: $lyrics-bg;
+      color: $white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .show-lyrics {
+        width: 300px;
+        height: 350px;
+        box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        font-family: $poppins-font;
+
+        .song-details {
+          display: flex;
+          align-items: center;
+          padding: 20px;
+
+          .info-details {
+            margin-left: 20px;
+
+            h6 {
+              overflow: hidden;
+              max-width: 20ch;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              font-size: 14px;
+              font-weight: 500;
+            }
+
+            p {
+              color: transparentize($white, $amount: 0.4);
+              font-size: 12px;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .lines {
+          width: 80%;
+          height: 47%;
+          overflow-y: scroll;
+          // background-color: #fff;
+          box-sizing: content-box;
+          padding: 0px 20px;
+          font-size: 20px;
+
+          font-weight: 500;
+          line-height: 1.6;
+
+          // Hiding scrollbar but keeping the functionality
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE and Edge */
+
+          &::-webkit-scrollbar {
+            display: none; /* Safari, Chrome and opera */
+          }
+        }
+
+        .logo {
+          // background-color: #000;
+          display: flex;
+          align-items: center;
+          padding: 30px 20px 0px;
+
+          &.hidden {
+            display: none;
+          }
+
+          i {
+            font-size: 18px;
           }
 
           p {
-            color: transparentize($white, $amount: 0.4);
+            margin-left: 3px;
             font-size: 12px;
-            font-weight: 400;
+            font-weight: 500;
           }
-        }
-      }
-
-      .lines {
-        width: 80%;
-        height: 47%;
-        overflow-y: scroll;
-        // background-color: #fff;
-        box-sizing: content-box;
-        padding: 0px 20px;
-        font-size: 20px;
-
-        font-weight: 500;
-        line-height: 1.6;
-
-        // Hiding scrollbar but keeping the functionality
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
-
-        &::-webkit-scrollbar {
-          display: none; /* Safari, Chrome and opera */
-        }
-      }
-
-      .logo {
-        // background-color: #000;
-        display: flex;
-        align-items: center;
-        padding: 30px 20px 0px;
-
-        &.hidden {
-          display: none;
-        }
-
-        i {
-          font-size: 18px;
-        }
-
-        p {
-          margin-left: 3px;
-          font-size: 12px;
-          font-weight: 500;
         }
       }
     }
