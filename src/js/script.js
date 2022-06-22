@@ -166,6 +166,10 @@ bgColors.forEach((bg) => {
       case "brown-grey":
         lyricsContainer.style.backgroundColor = "#988a5f";
         break;
+
+      case "default":
+        lyricsContainer.style.backgroundColor = "#91908C";
+        break;
     }
   });
 });

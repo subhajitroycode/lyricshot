@@ -190,7 +190,6 @@ $lyrics-bg: #91908c;
     .bg-container {
       width: 30px;
       height: 0;
-      background-color: #58e9b6;
       position: relative;
       top: 27%;
       left: 110%;
@@ -205,6 +204,10 @@ $lyrics-bg: #91908c;
 
         &:hover {
           transform: scale(1.15);
+        }
+
+        &[data-color="default"] {
+          background-color: #91908c;
         }
 
         &[data-color="black"] {
@@ -352,16 +355,30 @@ $lyrics-bg: #91908c;
       width: 80%;
       height: 55%;
     }
-    .lyrics-container {
+
+    .second-container {
       width: 95%;
-      height: 75%;
+
+      .bg-container {
+        position: static;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 8%;
+        margin: 10px auto;
+      }
+
+      .lyrics-container {
+        width: 100%;
+        height: 95%;
+      }
     }
   }
 }
 
 @media (max-width: 900px) {
   .container {
-    .lyrics-container {
+    .second-container {
       height: 70%;
     }
   }
