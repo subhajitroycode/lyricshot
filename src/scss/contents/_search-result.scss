@@ -1,0 +1,53 @@
+@use "sass:color";
+@use "../abstracts" as ab;
+
+.search-results {
+  margin-top: 20px;
+  width: 400px;
+  height: 550px;
+
+  &.hidden {
+    display: none;
+  }
+
+  ul {
+    width: 100%;
+    height: 84%;
+    overflow: auto;
+    box-sizing: content-box;
+    padding-top: 10px;
+    background-color: ab.$pearl-bush;
+    // background-color: red;
+
+    li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 80%;
+      margin: 0px auto 20px;
+      padding: 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: color.adjust(ab.$text-black, $lightness: 70%);
+        // color: $white;
+      }
+
+      .infos {
+        margin-left: 20px;
+        width: 200px;
+
+        p {
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+
+  @include ab.respond-to("small") {
+    width: 80%;
+    height: 55%;
+  }
+}

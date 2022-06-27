@@ -1,0 +1,67 @@
+@use "../abstracts" as ab;
+
+.container {
+  .second-container {
+    .bg-container {
+      width: 30px;
+      height: 0;
+      position: relative;
+      top: 27%;
+      left: 110%;
+
+      .bg-color {
+        width: 30px;
+        height: 30px;
+        margin: 10px auto;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 3px solid ab.$silver;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+
+        &[data-color="default"] {
+          background-color: ab.$lyrics-bg;
+        }
+
+        &[data-color="black"] {
+          background-color: ab.$black;
+        }
+
+        &[data-color="red"] {
+          background-color: ab.$red;
+        }
+
+        &[data-color="purple"] {
+          background-color: ab.$purple;
+        }
+
+        &[data-color="brown"] {
+          background-color: ab.$brown;
+        }
+
+        &[data-color="smalt-blue"] {
+          background-color: ab.$smalt-blue;
+        }
+
+        &[data-color="coral-tree"] {
+          background-color: ab.$coral-tree;
+        }
+
+        &[data-color="brown-grey"] {
+          background-color: ab.$brown-grey;
+        }
+      }
+
+      @include ab.respond-to("small") {
+        position: static;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 8%;
+        margin: 10px auto;
+      }
+    }
+  }
+}

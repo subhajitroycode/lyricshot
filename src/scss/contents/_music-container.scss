@@ -1,0 +1,75 @@
+@use "../abstracts" as ab;
+@use "../base";
+
+.container {
+  .second-container {
+    width: 400px;
+    height: 75%;
+
+    &.hidden {
+      display: none;
+    }
+
+    .lyrics-container {
+      background-color: ab.$lyrics-bg;
+      color: ab.$white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .show-lyrics {
+        width: 300px;
+        height: 350px;
+        box-shadow: 0px 0px 20px 5px rgba(ab.$text-black, 0.5);
+        border-radius: 6px;
+        font-family: base.$poppins-font;
+
+        .song-details {
+          display: flex;
+          align-items: center;
+          padding: 20px;
+
+          .info-details {
+            margin-left: 20px;
+          }
+        }
+
+        .lines {
+          width: 80%;
+          height: 47%;
+          overflow-y: scroll;
+          box-sizing: content-box;
+          padding: 0px 20px;
+          font-size: 20px;
+
+          font-weight: 500;
+          line-height: 1.6;
+
+          // Hiding scrollbar but keeping the functionality
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE and Edge */
+
+          &::-webkit-scrollbar {
+            display: none; /* Safari, Chrome and opera */
+          }
+        }
+      }
+
+      @include ab.respond-to("small") {
+        width: 100%;
+        height: 95%;
+      }
+    }
+
+    @include ab.respond-to("medium") {
+      height: 70%;
+    }
+
+    @include ab.respond-to("small") {
+      width: 95%;
+    }
+  }
+}

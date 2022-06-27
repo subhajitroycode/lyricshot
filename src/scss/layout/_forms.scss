@@ -1,0 +1,36 @@
+@use "../abstracts" as ab;
+@use "../base";
+
+form {
+  // background-color: red;
+  text-align: center;
+  width: 80%;
+  font-family: base.$heritage-font;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+  }
+
+  i {
+    position: absolute;
+    padding: 9px;
+    min-width: 15px;
+    // background-color: #ee4758;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    padding: 5px 2px 5px 36px;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    margin-right: 15px;
+    background-color: ab.$pearl-bush;
+
+    &:focus {
+      border: 1px solid ab.$text-black;
+    }
+  }
+}

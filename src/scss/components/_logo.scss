@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 30px 20px 0px;
+
+  &.hidden {
+    display: none;
+  }
+
+  i {
+    font-size: 18px;
+  }
+
+  p {
+    margin-left: 3px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
