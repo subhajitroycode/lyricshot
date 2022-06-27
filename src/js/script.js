@@ -15,7 +15,7 @@ const bgColors = bgContainer.querySelectorAll(".bg-color");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  document.querySelector(".second-container").classList.add("hidden");
+  document.querySelector(".music-container").classList.add("hidden");
   document.querySelector(".search-results").classList.remove("hidden");
   ul.innerHTML = "";
   ul.style.display = "none";

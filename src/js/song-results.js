@@ -27,7 +27,7 @@ export const showResults = (data) => {
 
     li.addEventListener("click", (e) => {
       document.querySelector(".search-results").classList.add("hidden");
-      document.querySelector(".second-container").classList.remove("hidden");
+      document.querySelector(".music-container").classList.remove("hidden");
       document.querySelector(".logo").classList.add("hidden");
 
       showLyrics(e.target.closest("li"));
