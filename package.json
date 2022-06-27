@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "rm -rf ./public && rm -rf ./.cache && parcel build src/index.html --out-dir public --public-url ./"
+    "dev": "rm -rf ./.cache && rm -rf ./dist && parcel src/index.html",
+    "build": "rm -rf ./public && rm -rf ./.cache && rm -rf ./dist && parcel build src/index.html --out-dir public --public-url ./"
   },
   "author": "",
   "license": "ISC",
