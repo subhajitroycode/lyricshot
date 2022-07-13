@@ -1,7 +1,9 @@
+import { key } from "./script";
+
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "ab83087b2cmsh1a40d77ab05f046p12dc43jsn5b20114a3dfd",
+    "X-RapidAPI-Key": key,
     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
   },
 };

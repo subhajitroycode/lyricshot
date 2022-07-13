@@ -2,6 +2,7 @@ import { searchSongs } from "./lyricsAPI";
 import { showResults } from "./song-results";
 import { changeColor } from "./bg-colors";
 
+const key = config.SECRET_API_KEY;
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const ul = document.querySelector("ul");
@@ -35,4 +36,4 @@ bgColors.forEach((bg) => {
   });
 });
 
-export { songDetails, lines, ul, loading, lyricsContainer, displayLyrics };
+export { songDetails, lines, ul, loading, lyricsContainer, displayLyrics, key };
