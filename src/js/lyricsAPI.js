@@ -1,9 +1,10 @@
-import { key } from "./script";
+require("dotenv").config();
+console.log(process.env.API_KEY);
 
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": key,
+    "X-RapidAPI-Key": process.env.API_KEY,
     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
   },
 };

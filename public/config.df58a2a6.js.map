@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/config.js"],"names":["config","SECRET_API_KEY"],"mappings":";AAAA,IAAMA,EAAS,CACbC,eAAgB","file":"config.df58a2a6.js","sourceRoot":"..\\src","sourcesContent":["const config = {\r\n  SECRET_API_KEY: \"ab83087b2cmsh1a40d77ab05f046p12dc43jsn5b20114a3dfd\",\r\n};\r\n"]}
