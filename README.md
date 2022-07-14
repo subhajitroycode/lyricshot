@@ -32,7 +32,7 @@ There is some issues that I don't know how to fix it yet. Like I wanted a downlo
 
 ## What I Learned
 
-I learned how to use the API's and how to use the libraries that I used. I also learned how to make SASS and JS more modular and reusable. I also learned how to make the vertical scrollbar hidden but still scrollable.
+I learned how to use the API's and how to use the libraries that I used. I also learned how to make SASS and JS more modular and reusable. I also learned how to make the vertical scrollbar hidden but still scrollable. I also learned about how to hide API keys, how to use the environment variables and how to use the environment variables in the netlify functions.
 
 ## Socials
 
