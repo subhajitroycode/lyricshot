@@ -31,7 +31,9 @@ form.addEventListener("submit", (e) => {
 
 bgColors.forEach((bg) => {
   bg.addEventListener("click", (e) => {
+    bgColors.forEach((rm) => rm.style.removeProperty("transform"));
     changeColor(e);
+    bg.style.transform = "scale(1.2)";
   });
 });
 
