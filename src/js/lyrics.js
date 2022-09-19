@@ -12,6 +12,11 @@ export const showLyrics = (value) => {
 
   getLyrics(songId)
     .then((data) => {
+      if (data.length === 0) {
+        alert("Lyrics are unavailable, Please choose another song");
+        return;
+      }
+
       const h6 = document.createElement("h6");
       const img = document.createElement("img");
       const p = document.createElement("p");
