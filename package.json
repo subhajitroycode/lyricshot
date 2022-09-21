@@ -14,9 +14,6 @@
     "sass": "^1.52.3"
   },
   "dependencies": {
-    "dom-to-image": "^2.6.0",
-    "dotenv": "^16.0.1",
-    "html-element-to-image": "^2.1.1",
-    "html2canvas": "^1.4.1"
+    "dotenv": "^16.0.1"
   }
 }
